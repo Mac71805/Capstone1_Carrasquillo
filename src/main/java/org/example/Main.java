@@ -59,9 +59,13 @@ public class Main {
             }
         }
 
-        if (!isDeposit) {
-            amount *= -1;
+
+        if (isDeposit) {
+            amount = Math.abs(amount);
+        } else {
+            amount = -Math.abs(amount);
         }
+
 
         Transaction transaction = new Transaction(
                 LocalDate.now().toString(),
